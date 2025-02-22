@@ -17,25 +17,25 @@ class EventServiceProvider extends ServiceProvider
             \Illuminate\Auth\Listeners\SendEmailVerificationNotification::class,
         ],
         \Tenancy\Hooks\Database\Events\Drivers\Configuring::class => [
-            \Core\BoundedContext\Admin\School\Infrastructure\Listeners\ConfigureTenantDatabase::class
+            \Core\BoundedContext\Admin\Customer\Infrastructure\Listeners\ConfigureTenantDatabase::class
         ],
         \Tenancy\Affects\Connections\Events\Resolving::class => [
-            \Core\BoundedContext\Admin\School\Infrastructure\Listeners\ResolveTenantConnection::class
+            \Core\BoundedContext\Admin\Customer\Infrastructure\Listeners\ResolveTenantConnection::class
         ],
         \Tenancy\Affects\Connections\Events\Drivers\Configuring::class => [
-            \Core\BoundedContext\Admin\School\Infrastructure\Listeners\ConfigureTenantConnection::class
+            \Core\BoundedContext\Admin\Customer\Infrastructure\Listeners\ConfigureTenantConnection::class
         ],
         \Tenancy\Hooks\Migration\Events\ConfigureMigrations::class => [
-            \Core\BoundedContext\Admin\School\Infrastructure\Listeners\ConfigureTenantMigrations::class
+            \Core\BoundedContext\Admin\Customer\Infrastructure\Listeners\ConfigureTenantMigrations::class
         ],
         \Tenancy\Hooks\Migration\Events\ConfigureSeeds::class => [
-            \Core\BoundedContext\Admin\School\Infrastructure\Listeners\ConfigureTenantSeeds::class
+            \Core\BoundedContext\Admin\Customer\Infrastructure\Listeners\ConfigureTenantSeeds::class
         ],
         \Tenancy\Affects\URLs\Events\ConfigureURL::class => [
-            \Core\BoundedContext\Admin\School\Infrastructure\Listeners\ConfigureApplicationUrl::class
+            \Core\BoundedContext\Admin\Customer\Infrastructure\Listeners\ConfigureApplicationUrl::class
         ],
         \Tenancy\Affects\Routes\Events\ConfigureRoutes::class => [
-            \Core\BoundedContext\Admin\School\Infrastructure\Listeners\ConfigureTenantRoutes::class
+            \Core\BoundedContext\Admin\Customer\Infrastructure\Listeners\ConfigureTenantRoutes::class
         ]
     ];
 

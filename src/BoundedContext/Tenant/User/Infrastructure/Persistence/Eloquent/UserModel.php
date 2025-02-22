@@ -33,7 +33,6 @@ class UserModel extends Authenticatable implements JWTSubject
         'phone_two',
         'document',
         'address',
-        'gender_id',
         'slug',
         'picture',
         'identification_type_id',

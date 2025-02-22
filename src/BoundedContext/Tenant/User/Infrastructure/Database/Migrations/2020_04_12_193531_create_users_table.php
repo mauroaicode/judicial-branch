@@ -20,8 +20,6 @@ return new class extends Migration {
             $table->string('document')->nullable();
             $table->uuid('identification_type_id')->nullable();;
             $table->foreign('identification_type_id')->references('id')->on('identification_types');
-            $table->uuid('gender_identity_id')->nullable();;
-            $table->foreign('gender_identity_id')->references('id')->on('gender_identities');
             $table->string('email')->unique();
             $table->string('address');
             $table->string('phone');

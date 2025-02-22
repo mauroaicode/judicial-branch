@@ -1,6 +1,10 @@
 <?php
 
-use Core\BoundedContext\Tenant\Auth\Infrastructure\Controllers\{LoginPostController, LogoutPostController};
+use Illuminate\Support\Facades\Route;
+use Core\BoundedContext\Tenant\Auth\Infrastructure\Controllers\{
+    LoginPostController,
+    LogoutPostController
+};
 
 Route::group(['middleware' => 'api'], function () {
     Route::post('login', LoginPostController::class);

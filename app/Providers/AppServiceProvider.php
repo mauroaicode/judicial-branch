@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Core\BoundedContext\Admin\Role\Infrastructure\Persistence\Eloquent\RoleModel;
-use Core\BoundedContext\Admin\School\Infrastructure\Persistence\Eloquent\SchoolModel;
+use Core\BoundedContext\Admin\Customer\Infrastructure\Persistence\Eloquent\CustomerModel;
 use Core\Shared\Domain\Contracts\TransactionContract;
 use Core\Shared\Domain\Contracts\UuidGeneratorContract;
 use Core\Shared\Infrastructure\Handlers\DatabaseTransactionHandler;
@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->resolving(ResolvesTenants::class, function (ResolvesTenants $resolver) {
-            $resolver->addModel(SchoolModel::class);
+            $resolver->addModel(CustomerModel::class);
             return $resolver;
         });
 

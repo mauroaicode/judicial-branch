@@ -2,11 +2,16 @@
 
 namespace App\Console;
 
+use Core\Shared\Infrastructure\Console\JudicialData\SyncCustomerFilingsCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
 {
+
+    protected $commands = [
+        SyncCustomerFilingsCommand::class
+    ];
     /**
      * Define the application's command schedule.
      *

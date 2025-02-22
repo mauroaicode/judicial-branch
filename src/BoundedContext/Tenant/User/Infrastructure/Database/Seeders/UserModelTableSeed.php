@@ -15,13 +15,15 @@ class UserModelTableSeed extends Seeder
      */
     public function run(): void
     {
+        $name = 'Edwin';
+        $lastName = 'Jones';
         // Usuario administrador
         UserModel::factory()->count(1)->create([
 
-            'name' => 'Fernando',
-            'last_name' => 'Puchana',
-            'email' => 'fernando@aciudadablanca.com',
-            'slug' => Str::slug(strtolower('Fernando') . '-' . strtolower('Puchana') . '-' . Str::random(10), '-'),
+            'name' => $name,
+            'last_name' => $lastName,
+            'email' => 'edwin@aciudadablanca.com',
+            'slug' => Str::slug(strtolower($name) . '-' . strtolower($lastName) . '-' . Str::random(10), '-'),
 
         ])->each(function (UserModel $user) {
 
