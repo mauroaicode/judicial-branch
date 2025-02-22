@@ -10,6 +10,6 @@ class RoleModelTableSeed extends Seeder
     public function run()
     {
         RoleModel::create(['name' => 'Administrator']);
-        RoleModel::create(['name' => 'Student']);
+        RoleModel::create(['name' => 'Secretary']);
     }
 }

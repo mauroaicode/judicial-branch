@@ -2,7 +2,10 @@
 
 namespace Core\BoundedContext\Admin\Role\Domain;
 
-use Core\BoundedContext\Admin\Role\Domain\{ValueObjects\RoleId, ValueObjects\RoleName};
+use Core\BoundedContext\Admin\Role\Domain\{
+    ValueObjects\RoleId,
+    ValueObjects\RoleName
+};
 
 class Role
 {

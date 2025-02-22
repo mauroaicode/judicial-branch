@@ -20,6 +20,6 @@ class FindUser
         $email = new UserEmail($email);
         $user = $this->repository->findForEmail($email);
 
-        return UserResponse::fromGame($user);
+        return UserResponse::fromUser($user);
     }
 }
