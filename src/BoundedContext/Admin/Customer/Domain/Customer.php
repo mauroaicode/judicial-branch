@@ -14,8 +14,7 @@ class Customer
         private CustomerId   $id,
         private CustomerName $name,
         private CustomerSlug $slug,
-    )
-    {
+    ){
     }
 
     public static function fromPrimitives(string $id, string $name, string $slug): self
