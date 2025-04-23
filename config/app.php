@@ -41,7 +41,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => (bool)env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -185,15 +185,18 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Tenancy\Identification\Drivers\Queue\Providers\IdentificationProvider::class,
         /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         \App\Providers\CustomerServiceProvider::class,
+        \App\Providers\FilingServiceProvider::class,
+        \App\Providers\ProcessServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
+        \App\Providers\TenantEventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class
 

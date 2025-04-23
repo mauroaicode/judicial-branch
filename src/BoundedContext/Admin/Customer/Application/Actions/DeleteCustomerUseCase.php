@@ -4,7 +4,7 @@ namespace Core\BoundedContext\Admin\Customer\Application\Actions;
 
 use Core\BoundedContext\Admin\Customer\{
     Domain\ValueObjects\CustomerId,
-    Application\Responses\CustomerResponse,
+    Application\Responses\FilingResponse,
     Domain\Contracts\CustomerRepositoryContract,
     Domain\Exceptions\CustomerNotFoundException,
 };
@@ -17,11 +17,11 @@ class DeleteCustomerUseCase
      * Executes the action of eliminating a customer.
      *
      * @param string $customerId
-     * @return CustomerResponse The response of the delete action.
+     * @return FilingResponse The response of the delete action.
      *
      * @throws CustomerNotFoundException If the customer with the provided ID is not found.
      */
-    public function __invoke(string $customerId): CustomerResponse
+    public function __invoke(string $customerId): FilingResponse
     {
         $id = new CustomerId($customerId);
 
@@ -32,6 +32,6 @@ class DeleteCustomerUseCase
             throw new CustomerNotFoundException();
         }
 
-        return CustomerResponse::fromCustomer($customer);
+        return FilingResponse::fromCustomer($customer);
     }
 }

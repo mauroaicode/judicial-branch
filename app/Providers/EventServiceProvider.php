@@ -36,7 +36,7 @@ class EventServiceProvider extends ServiceProvider
         ],
         \Tenancy\Affects\Routes\Events\ConfigureRoutes::class => [
             \Core\BoundedContext\Admin\Customer\Infrastructure\Listeners\ConfigureTenantRoutes::class
-        ]
+        ],
     ];
 
     /**

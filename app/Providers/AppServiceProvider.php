@@ -4,10 +4,12 @@ namespace App\Providers;
 
 use Core\BoundedContext\Admin\Role\Infrastructure\Persistence\Eloquent\RoleModel;
 use Core\BoundedContext\Admin\Customer\Infrastructure\Persistence\Eloquent\CustomerModel;
+use Core\Shared\Domain\Contracts\TenantContextContract;
 use Core\Shared\Domain\Contracts\TransactionContract;
 use Core\Shared\Domain\Contracts\UuidGeneratorContract;
 use Core\Shared\Infrastructure\Handlers\DatabaseTransactionHandler;
 use Core\Shared\Infrastructure\Handlers\RamseyUuidGenerator;
+use Core\Shared\Infrastructure\Services\Tenant\LaravelTenantContext;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\ServiceProvider;
 use Tenancy\Identification\Contracts\ResolvesTenants;
@@ -35,6 +37,11 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(
             UuidGeneratorContract::class,
             RamseyUuidGenerator::class,
+        );
+
+        $this->app->bind(
+            TenantContextContract::class,
+            LaravelTenantContext::class
         );
     }
 

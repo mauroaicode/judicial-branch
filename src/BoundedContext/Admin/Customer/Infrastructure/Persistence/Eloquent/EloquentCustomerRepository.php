@@ -34,6 +34,15 @@ class EloquentCustomerRepository implements CustomerRepositoryContract
         );
     }
 
+    public function toEloquent(Customer $customer): ?CustomerModel
+    {
+        return new CustomerModel([
+            'id' => $customer->id()->value(),
+            'name' => $customer->name()->value(),
+            'slug' => $customer->slug()->value(),
+        ]);
+    }
+
     /**
      * Gets a list of customers from the database and converts it into a set of domain instances.
      *
@@ -100,6 +109,7 @@ class EloquentCustomerRepository implements CustomerRepositoryContract
 
         return $this->toDomain($customerModel);
     }
+
 
     /**
      * Removes a customer from the database by its ID.

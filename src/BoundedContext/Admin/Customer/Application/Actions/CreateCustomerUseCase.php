@@ -8,10 +8,9 @@ use Core\BoundedContext\Admin\Customer\Domain\ValueObjects\{
     CustomerName
 };
 use Core\BoundedContext\Admin\Customer\{
-    Domain\Customer,
     Application\Responses\CustomerResponse,
-    Domain\Contracts\CustomerRepositoryContract,
-};
+    Domain\Customer,
+    Domain\Contracts\CustomerRepositoryContract};
 
 final class CreateCustomerUseCase
 {

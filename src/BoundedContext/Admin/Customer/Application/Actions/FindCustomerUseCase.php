@@ -7,7 +7,7 @@ use Core\BoundedContext\Admin\Customer\Domain\{
     Contracts\CustomerRepositoryContract,
     Exceptions\CustomerNotFoundException
 };
-use Core\BoundedContext\Admin\Customer\Application\Responses\CustomerResponse;
+use Core\BoundedContext\Admin\Customer\Application\Responses\FilingResponse;
 
 
 class FindCustomerUseCase
@@ -19,10 +19,10 @@ class FindCustomerUseCase
      *
      * @param string $customerId The id of the customer being searched for.
      *
-     * @return CustomerResponse The response containing the data for the customer found.
+     * @return FilingResponse The response containing the data for the customer found.
      * @throws CustomerNotFoundException If the customer is not found in the database.
      */
-    public function __invoke(string $customerId): CustomerResponse
+    public function __invoke(string $customerId): FilingResponse
     {
         $id = new CustomerId($customerId);
 
@@ -33,6 +33,6 @@ class FindCustomerUseCase
             throw new CustomerNotFoundException();
         }
 
-        return CustomerResponse::fromcustomer($customer);
+        return FilingResponse::fromcustomer($customer);
     }
 }

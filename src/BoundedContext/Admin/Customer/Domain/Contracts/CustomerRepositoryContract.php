@@ -5,11 +5,13 @@ namespace Core\BoundedContext\Admin\Customer\Domain\Contracts;
 use Core\BoundedContext\{
     Admin\Customer\Domain\Customer,
     Admin\Customer\Domain\Customers,
-    Admin\Customer\Domain\ValueObjects\CustomerId
-};
+    Admin\Customer\Domain\ValueObjects\CustomerId,
+    Admin\Customer\Infrastructure\Persistence\Eloquent\CustomerModel};
 
 interface CustomerRepositoryContract
 {
+    public function toEloquent(Customer $customer): ?CustomerModel;
+
     public function list(): Customers;
 
     public function save(Customer $customer): void;
